@@ -21,7 +21,7 @@ for (var i = 0; i <arr.length; i++){
             <h5 class="card-title" id="itemName">${arr[i][1]}</h5>
             <p class="card-text" id="itemDesc">${arr[i][3]}</p>
             <p class="card-text">Rp ${arr[i][2]}</p>
-            <a href="#" class="btn btn-primary" onclick="getProduct()" id="addCart">Add to Cart</a>
+            <a href="#" class="btn btn-primary" onclick="y()" id="addCart">Add to Cart</a>
             </div>
         </div>`
 }
@@ -53,25 +53,14 @@ function filtering(string){
 }
 
 //release2
-//var cartButtons = document.getElementsById("cart")
-//var button1 = cartButtons[0]
-//button1.addEventListener('click', function(event){
-    //  console.log('clicked')
-//});
-//function getProduct(x){
-//    var y = document.getElementsById("cart")
-//    document.getElementsById("cart").innerHTML = Number(y) + 1;
-//}
-
-var addToCart = document.querySelectorAll("#addCart");
-var cart = document.getElementById("cart");
-addToCart.forEach((data) => {
-  data.addEventListener("click", (event) => {
-    event.preventDefault();
-    var add = Number(cart.childNodes[3].value);
-    cart.childNodes[3].value = add + 1;
-  });
-});
+var cartText = document.getElementById("cart")
+var cartButton = document.getElementById("addCart")
+//var cartbutton1 = cartButtons[0]
+var cartSum = 0
+function y(){
+    cartSum = cartSum + 1
+    cartText.innerHTML = '<button class="btn btn-primary" id="cart"><i class="fas fa-shopping-cart"></i></button>('+cartSum+')'
+}
 
 
 
